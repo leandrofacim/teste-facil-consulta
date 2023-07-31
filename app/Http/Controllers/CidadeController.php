@@ -14,6 +14,6 @@ class CidadeController extends Controller
             return response()->json([], 404);
         }
 
-        return $cidades;
+        return response()->json($cidades);
     }
 }

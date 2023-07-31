@@ -16,13 +16,18 @@ class MedicoPaciente extends Model
         'paciente_id',
     ];
 
+    protected $with = [
+        'medico',
+        'paciente',
+    ];
+
     public function medico()
     {
-        return $this->belongsTo(Medico::class);
+        return $this->belongsTo(Medico::class, 'medico_id');
     }
 
     public function paciente()
     {
-        return $this->belongsTo(Paciente::class);
+        return $this->belongsTo(Paciente::class, 'paciente_id');
     }
 }
